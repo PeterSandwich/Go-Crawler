@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>数据展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container div{
+            margin:20px auto;
+            text-align: center;
+        }
+        .container div>div {
+            display: flex;
+        }
+        .container div>button {
+            margin-left: 10px;
+        }
+        table{
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <form method="get">
+            <input id="text" type="text"style="height: 27px" name="q" placeholder="按条件查找" size="50"  required />
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+        <p>共为你找到相关结果约为123条.显示从0起共2条记录</p>
+    </div>
+
+    <table class="table table-hover table-striped table-bordered">
+        <tbody>
+        <tr class="info">
+            <td>头像</td>
+            <td>用户</td>
+            <td>性别</td>
+            <td >年龄</td>
+            <td>身高</td>
+            <td>月收入</td>
+            <td>学历</td>
+
+        </tr>
+        
+        <tr>
+            <td><img src="https://photo.zastatic.com/images/photo/27375/109498461/16870242661675398.png" height="150" width="150"></td>
+            <td><a href="http://album.zhenai.com/u/74822048" target="view_window">test</a></td>
+        
+            <td>男士</td>
+            <td>26岁</td>
+            <td>157cm</td>
+            <td>3001-5000元</td>
+            <td>大学本科</td>
+
+        
+        </tr>
+        
+        <tr>
+            <td><img src="https://photo.zastatic.com/images/photo/27375/109498461/16870242661675398.png" height="150" width="150"></td>
+            <td><a href="http://album.zhenai.com/u/74822048" target="view_window">test</a></td>
+        
+            <td>男士</td>
+            <td>26岁</td>
+            <td>157cm</td>
+            <td>3001-5000元</td>
+            <td>大学本科</td>
+
+        
+        </tr>
+        
+
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

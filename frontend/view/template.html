@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>数据展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/csstest1.css" >
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <form method="get">
+            <input id="text" type="text"style="height: 27px" name="q" placeholder="按条件查找" size="50" value="{{.Query}}" required />
+            <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+        <p>共为你找到相关结果约为{{.Hits}}条.显示从{{.Start}}起共{{len .Items}}条记录</p>
+    </div>
+
+    <table class="table table-hover table-striped table-bordered">
+        <tbody>
+        <tr class="info">
+            <td>头像</td>
+            <td>用户</td>
+            <td>性别</td>
+            <td >年龄</td>
+            <td>身高</td>
+            <td>月收入</td>
+            <td>学历</td>
+            <td>城市</td>
+
+        </tr>
+        {{range .Items}}
+        <tr>
+            <td><img src="{{.Payload.ImageUrl}}" height="150" width="150"></td>
+            <td><a href="{{.Url}}" target="view_window">{{.Payload.Name}}</a></td>
+        {{with .Payload}}
+            <td>{{.Sex}}</td>
+            <td>{{.Age}}</td>
+            <td>{{.Height}}</td>
+            <td>{{.Income}}</td>
+            <td>{{.Education}}</td>
+            <td>{{.City}}</td>
+
+
+        {{end}}
+        </tr>
+        {{else}}
+        <div>
+            <span id="no_user">没有找到相关用户</span>
+            <br />
+            <br />
+        </div>
+        {{end}}
+
+        </tbody>
+
+    </table>
+    <div align="middle">
+    {{if ge .PrevFrom  0}}
+        <a href="search?q={{.Query}}&from={{.PrevFrom}}">上一页</a>
+    {{end}}
+        <a href="search?q={{.Query}}&from={{.NextFrom}}">下一页</a>
+    </div>
+
+</div>
+</body>
+</html>

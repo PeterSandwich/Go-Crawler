@@ -1,0 +1,13 @@
+.container div{
+    margin:20px auto;
+    text-align: center;
+}
+.container div>div {
+    display: flex;
+}
+.container div>button {
+    margin-left: 10px;
+}
+table{
+    text-align:center;
+}
